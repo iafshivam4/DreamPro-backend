@@ -26,10 +26,10 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 app.use('/api', router);
 app.use('/admin', admin);
-app.use('/',(req,res)=>{
+app.get('/',(req,res)=>{
   console.log("hello");
   res.sendFile(__dirname + '/views/index.html');
-})
+});
 
 
 app.listen(PORT, () => {
