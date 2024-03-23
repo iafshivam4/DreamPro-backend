@@ -18,7 +18,8 @@ exports.login= async function(req,res){
 
     if (!isPasswordValid) throw 'Invalid Password';
     const token =  await jwt.sign({userId:user._id,user_role:user.role}, process.env.SECRET_KEY, { expiresIn: '7d' });
-    response.success(req,res,"login successfull",token);
+    user.token=token;
+    response.success(req,res,"login successfull",user);
     }catch(error){
         return response.failure(req,res,error.message||error);
     }
