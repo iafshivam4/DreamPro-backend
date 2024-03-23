@@ -11,7 +11,7 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = process.env.PORT ;
 
-mongoose.connect('mongodb://localhost:27017/dreamproject')
+mongoose.connect('mongodb+srv://shivamtiwarixtr:DreamProject@cluster0.urbzuhw.mongodb.net/DreamPro')
 .then(() => {
   console.log('Connected to MongoDB');
 })
