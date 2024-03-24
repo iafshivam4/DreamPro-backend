@@ -28,6 +28,7 @@ app.use('/api', router);
 app.use('/admin', admin);
 app.get('/',function(req,res){
   console.log("Your project is runnng");
+  res.send("working");
 });
 
 app.listen(PORT, () => {
